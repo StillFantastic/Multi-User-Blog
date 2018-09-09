@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+	<div class="row main">
+		<div class="panel-heading">
+			<div class="panel-title text-center">
+				<h1 class="title">Register</h1>
+				<hr class="short-hr">
+			</div>
+		</div>
+		<div class="main-register main-center">
+			<form class="form-horizontal" method="post">
+				{% if username_error %}
+					<div class="alert alert-danger">{{ username_error }}</div>
+				{% endif %}
+				{% if password_error %}
+					<div class="alert alert-danger">{{ password_error }}</div>
+				{% endif %}
+				{% if verify_error %}
+					<div class="alert alert-danger">{{ verify_error }}</div>
+				{% endif %}
+				{% if email_error %}
+					<div class="alert alert-danger">{{ email_error }}</div>
+				{% endif %}
+				<div class="form-group">
+					<label class="col-md-2 control-label">Username</label>
+					<div class="col-md-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hiddeh="true"></i></span>
+							<input type="text" class="form-control" name="username" value="{{ username }}" placeholder="Enter your username">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-2 control-label">Password</label>
+					<div class="col-md-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+							<input type="password" class="form-control" name="password" placeholder="Enter your password">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-2 control-label">Verify Password</label>
+					<div class="col-md-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+							<input type="password" class="form-control" name="verify" placeholder="Enter your password">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-2 control-label">Email (Optional)</label>
+					<div class="col-md-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
+							<input type="text" class="form-control" name="email" value="{{ email }}" placeholder="Enter your email">
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-lg btn-block register-button">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

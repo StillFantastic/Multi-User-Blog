@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<div class="heading">
+			{% if title %}
+				{{ title }}
+			{% else %}
+				New Post
+			{% endif %}
+		</div>
+
+		{% if error %}
+			<div class="alert alert-danger">
+				{{ error }}
+			</div>
+		{% endif %}
+		<form method="post">
+			<div class="form-group">
+				<label>Subject</label>
+				<input type="text" name="subject" class="form-control" value="{{ subject }}">
+			</div>
+			<div class="form-group">
+				<label>Content</label>
+				<textarea name="content" class="form-control form-content">{{ content }}</textarea>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<button class="btn pull-right">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<br><br>	
+{% endblock %}

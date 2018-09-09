@@ -1,0 +1,37 @@
+<div class="container post">
+	{% if icon %}
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2" style="text-align: right">
+				<a href="/blog/modify?id={{ p.key().id() }}" class="post-icon"><i class="glyphicon glyphicon-cog"></i></a>
+				<a href="/blog/delete?id={{ p.key().id() }}" class="post-icon"><i class="glyphicon glyphicon-trash"></i></a>
+			</div>
+		</div>
+	{% endif %}
+	<div class="row" style="text-align: center">
+		<a href="/blog/{{ p.key().id() }}" class="subject">
+			{{ p.subject}}
+		</a>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 post-date">
+			{{ p.modified.strftime("%Y-%m-%d") }}
+			<div class="vote 
+				{% if user %}
+					{% for liked_post in user.liked_posts %}
+						{% if liked_post == p.key().id()|int %}
+							active	
+						{% endif %}
+					{% endfor %}
+				{% endif %}">
+				<a href="/blog/like?id={{ p.key().id() }}"><i class="glyphicon glyphicon-thumbs-up thumbs-up"></i><span class="like">&nbsp;Like&nbsp;&nbsp;{{ p.likes }}</span></i></a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="content">
+			<div class="col-md-8 col-md-offset-2">
+				{{ p._render_text | safe}}
+			</div>
+		</div>
+	</div>
+</div>

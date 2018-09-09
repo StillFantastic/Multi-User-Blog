@@ -1,0 +1,173 @@
+* {
+	font-family: "微軟正黑體";
+}
+
+body {
+	background-color: #f8f6f2 !important;
+}
+textarea {
+	resize: none;
+	font-family: monospace !important;
+}
+
+input {
+	font-family: monospace !important;
+}
+
+a:hover, a:link, a:active, a:visited {
+	text-decoration: none !important;
+}
+
+.nav {
+	background-color: black;
+	font-size: 15px;
+	padding: 3px 0 !important;
+	margin-bottom: 40px !important;
+}
+
+.nav-elem {
+	display: block;
+	color: white !important;
+	text-decoration: none;
+	text-align: center;
+	padding: 8px 16px;
+	margin: 8px 0px;
+}
+
+.nav-elem:visited {
+	background-color: #aaa;
+}
+
+.nav-elem:hover {
+	background-color: #aaa;
+}
+
+.heading {
+	margin: 10px auto;
+	text-align: center;
+	font-size: 25px;
+}
+
+.form-content {
+	height: 400px !important;
+	width: 100%;
+}
+
+.subject {
+	display: inline-block;
+	background-color: black;
+	color: white;
+	margin: 15px auto;
+	padding: 1px 8px;
+	font-size: 24px;
+}
+
+.subject:visited {
+	color: white;
+}
+
+.subject:hover {
+	color: white;
+}
+
+.content {
+	font-size: 18px;
+	line-height: 2em;
+}
+
+.post {
+	margin-bottom: 20%;
+}
+
+.post-date {
+	position: relative;
+	text-align: right;
+	font-size: 16px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid #000;
+}
+
+.main {
+	margin-top: 20px;
+}
+
+h1 .tittle {
+	font-size: 50px;
+	font-weight: 400;
+}
+
+.short-hr {
+	width: 10%;
+}
+
+.long-hr {
+	width: 65%;
+	height: 1px;
+	background-color: #666;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	margin-bottom: 15px;
+}
+
+.main-register {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.main-center {
+	margin: 0 auto;
+	padding: 40px 40px;
+	max-width: 666px;
+}
+
+.register-button {
+	margin-top: 5px;
+	margin-bottom: 30px;
+}
+
+.register-button:hover {
+	background-color: #666666;
+}
+
+.post-icon {
+	font-size: 40px;
+}
+
+.post-icon + .post-icon {
+	padding-left: 20px;
+}
+
+.vote {
+	position: absolute;
+	top: -15px;
+	left: 0px;
+}
+
+.thumbs-up {
+	color: #77839b;
+	font-size: 23px;
+}
+
+.active .thumbs-up, .active .like {
+	color: green;
+}
+
+.like {
+	color: #77839b;
+	font-size: 18px;
+}
+
+.comment-content {
+	padding-left: 20px;
+}
+
+.comment-icon {
+	color: black;
+	font-size: 20px;
+}

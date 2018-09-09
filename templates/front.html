@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if msg %}
+	<div class="container">
+		<div class="row">
+			<div class="alert alert-danger">{{ msg }}</div>	
+		</div>
+	</div>
+	{% endif %}
+	{% for p in posts %}
+		{{ p.render(user, False) | safe}}
+	{% endfor %}
+{% endblock %}

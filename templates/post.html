@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if msg %}
+	<div class="container">
+		<div class="alert alert-danger">
+			{{ msg }}
+		</div>
+	</div>
+{% endif %}
+{{ post.render(user) | safe }}
+
+<div class="heading">Comments</div>
+{% if user %}
+	<div style="text-align: center">
+		<a href="{{ post.key().id() }}/comment" style="color: black"><button class="btn register-btn">Add Comment</button</a>
+	</div>
+{% endif %}
+<hr class="long-hr">
+
+
+{% for comment in comments %}
+	{{ comment.render(user) | safe }}
+	<hr class="long-hr">
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>StillFantasy</title>
+		<link type="text/css" rel="stylesheet" href="/static/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row nav">
+				<div class="col-md-2">
+					<a href="/blog" class="nav-elem">HOME</a>
+				</div>
+				{% if user %}
+					<div class="col-md-offset-4 col-md-2">
+						<a href="/blog/newpost" class="nav-elem">NEW POST</a>
+					</div>
+					<!--
+					<div class="col-md-2">
+						<a href="#" class="nav-elem">PROFILE</a>
+					</div>
+					-->
+					<div class="col-md-2">
+						<a href="/logout" class="nav-elem">LOGOUT</a>
+					</div>
+				{% else %}
+					<div class="col-md-offset-6 col-md-2">
+						<a href="/signup" class="nav-elem">SIGN UP</a>
+					</div>
+					<div class="col-md-2">
+						<a href="/login" class="nav-elem">LOGIN</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+
+		{% block content %}
+		{% endblock %}
+		<br>
+		<br>
+		<br>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 col-md-offset-2">
+			<div>
+				<h3>{{ comment.name }}</h3>
+			</div>
+			<div class="comment-content">
+				{{ comment._render_text | safe}}
+			</div>
+		</div>
+		{% if user and user.name == comment.name %}
+			<div class="col-md-1">
+				<a href="/blog/{{ comment.post_id }}/comment/modify?id={{ comment.key().id() }}"><i class="comment-icon glyphicon glyphicon-cog"></i></a>
+				&nbsp;
+				<a href="/blog/{{ comment.post_id }}/comment/delete?id={{ comment.key().id() }}"><i class="comment-icon glyphicon glyphicon-trash"></i></a>
+			</div>
+		{% endif %}
+	</div>
+</div>
