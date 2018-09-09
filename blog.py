@@ -139,7 +139,7 @@ class PostPage(BlogHandler):
         msg = self.request.get("error_msg")
         post = Post.by_id(int(post_id))
         comments = db.GqlQuery("SELECT * FROM Comment " +
-                               "WHERE post_id='%s'" % post_id)
+                               "WHERE post_id='%s' ORDER BY created ASC" % post_id)
         if not post:
             self.error(404)
         else:
