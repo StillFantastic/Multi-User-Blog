@@ -78,7 +78,7 @@ class Post(db.Model):
 
     subject = db.StringProperty(required=True)
     content = db.TextProperty(required=True)
-    modified = db.DateTimeProperty(auto_now=True)
+    created = db.DateTimeProperty(auto_now_add=True)
     author = db.StringProperty(required=False)
     likes = db.IntegerProperty(default=0)
 
@@ -98,7 +98,7 @@ class BlogFront(BlogHandler):
 
     def get(self):
         msg = self.request.get("error_msg")
-        posts = db.GqlQuery("SELECT * FROM Post ORDER BY likes DESC limit 10")
+        posts = db.GqlQuery("SELECT * FROM Post ORDER BY created DESC limit 10")
         self.render("front.html", posts=posts, user=self.user, msg=msg)
 
 
@@ -138,8 +138,8 @@ class PostPage(BlogHandler):
     def get(self, post_id):
         msg = self.request.get("error_msg")
         post = Post.by_id(int(post_id))
-        comments = db.GqlQuery("SELECT * FROM Comment
-                               WHERE post_id='%s'" % post_id)
+        comments = db.GqlQuery("SELECT * FROM Comment " +
+                               "WHERE post_id='%s'" % post_id)
         if not post:
             self.error(404)
         else:

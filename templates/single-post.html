@@ -14,7 +14,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2 post-date">
-			{{ p.modified.strftime("%Y-%m-%d") }}
+			{{ p.created.strftime("%Y-%m-%d") }}
 			<div class="vote 
 				{% if user %}
 					{% for liked_post in user.liked_posts %}
