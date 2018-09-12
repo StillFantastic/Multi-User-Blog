@@ -113,6 +113,10 @@ class NewPost(BlogHandler):
         self.render("newpost.html", user=self.user)
 
     def post(self):
+        if not self.user:
+            msg = "Login first, please."
+            self.redirect("/blog?error_msg=%s" % msg)
+            return
         subject = self.request.get("subject")
         content = self.request.get("content")
         author = self.user.name
